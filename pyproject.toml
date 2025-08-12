@@ -1,0 +1,30 @@
+[project]
+name = "organisation-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "alembic>=1.16.4",
+    "asyncpg>=0.30.0",
+    "fastapi>=0.116.1",
+    "geoalchemy2>=0.18.0",
+    "phonenumbers>=9.0.10",
+    "pydantic-extra-types>=2.10.5",
+    "pydantic-settings>=2.10.1",
+    "pytest-asyncio>=1.1.0",
+    "shapely>=2.1.1",
+    "sqlalchemy>=2.0.42",
+    "sqlalchemy-utils>=0.41.2",
+    "uvicorn>=0.35.0",
+]
+
+[dependency-groups]
+dev = [
+    "faker>=37.5.3",
+    "pytest>=8.4.1",
+    "ruff>=0.12.8",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
