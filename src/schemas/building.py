@@ -25,9 +25,13 @@ class BuildingBase(CustomBaseModel):
     address: str
     coordinates: Annotated[Coordinate, BeforeValidator(convert_wkb_to_coordinate)]
 
-    @field_serializer("coordinates")
-    def convert_coordinate_to_wkt(self, coordinate: Coordinate, _info):
-        return f"Point({coordinate.longitude} {coordinate.latitude})"
+    @field_serializer("coordinates", when_used="unless-none")
+    def convert_coordinates(self, coordinate: Coordinate, _info):
+        if _info.mode == "python":
+            # WKT
+            return f"Point({coordinate.longitude} {coordinate.latitude})"
+
+        return coordinate
 
 
 class BuildingIn(BuildingBase): ...
