@@ -35,7 +35,7 @@ async def get_by_radius(
     return await get_organisations_within_radius(lat, lon, radius, session)
 
 
-@api.get("/rectangle/organisations")
+@api.get("/organisations/rectangle")
 async def get_by_rectangle(
     lat: Annotated[
         float,

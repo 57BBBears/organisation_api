@@ -202,13 +202,13 @@
         }
       }
     },
-    "/v1/geo/rectangle/organisations": {
+    "/v1/geo/organisations/rectangle": {
       "get": {
         "tags": [
           "geo"
         ],
         "summary": "Get By Rectangle",
-        "operationId": "get_by_rectangle_v1_geo_rectangle_organisations_get",
+        "operationId": "get_by_rectangle_v1_geo_organisations_rectangle_get",
         "security": [
           {
             "APIKeyHeader": []
@@ -286,7 +286,7 @@
                   "items": {
                     "$ref": "#/components/schemas/OrganisationOut"
                   },
-                  "title": "Response Get By Rectangle V1 Geo Rectangle Organisations Get"
+                  "title": "Response Get By Rectangle V1 Geo Organisations Rectangle Get"
                 }
               }
             }
